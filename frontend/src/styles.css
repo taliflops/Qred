@@ -1,0 +1,274 @@
+:root {
+  --background: radial-gradient(circle at 0 0, #102824, #0a0a0ae6);
+  --text: #ffffff;
+  --text-muted: #ffffff80;
+  --text-subtle: #ffffff50;
+  --surface: #191919;
+  --surface-raised: #3a3a3a;
+  --radius-lg: 28px;
+  --gutter: 24px;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+button:disabled,
+select:disabled {
+  cursor: progress;
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--text-muted);
+  outline-offset: 4px;
+}
+
+ul {
+  list-style: none;
+}
+
+.app {
+  position: relative;
+  max-width: 430px;
+  margin: var(--gutter) auto;
+  padding: 32px var(--gutter);
+  background: radial-gradient(circle at 0 0, #102824, #0a0a0ae6);
+  border-radius: 40px;
+}
+
+.icon-button {
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header svg path,
+.header svg circle {
+  fill: var(--text);
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 48px 20px 0;
+}
+
+/* Account selector */
+.account-selector {
+  position: relative;
+  align-self: flex-start;
+}
+
+.account-selector__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.account-selector__chevron {
+  display: inline-flex;
+  transform: rotate(90deg);
+}
+
+.account-selector select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.account-selector:has(select:focus-visible) {
+  outline: 2px solid var(--text-muted);
+  outline-offset: 4px;
+}
+
+.account-selector option {
+  color: #000;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  aspect-ratio: 1.8;
+  margin: 0 -20px;
+  padding: 24px 20px;
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: 0 16px 32px #00000040;
+}
+
+.card--empty {
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__header svg path,
+.card__header svg circle {
+  fill: var(--text);
+}
+
+.card__status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background-color: #741515b5;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+.card__status--active {
+  background-color: #166541c7;
+}
+
+.card__number {
+  font-size: 22px;
+  letter-spacing: 0.15em;
+}
+
+.card__number span {
+  margin-right: 8px;
+}
+
+.text-button {
+  display: block;
+  margin: 16px auto 0;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+/* Balance */
+.balance__label {
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.balance__row {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  text-align: left;
+  margin-top: 4px;
+}
+
+.balance__remaining {
+  font-size: 40px;
+  letter-spacing: 0.15em;
+}
+
+.balance__limit {
+  flex: 1;
+  margin-left: 8px;
+  font-size: 20px;
+  letter-spacing: 0.12em;
+}
+
+/* Transactions */
+.transactions {
+  margin: 40px -20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.transactions__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px 20px;
+  background: var(--surface-raised);
+  color: #000;
+}
+
+.transactions__header h2 {
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.transactions ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--surface);
+}
+
+.transaction__merchant {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+.transaction__date {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.transaction__amount {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+}
+
+.transactions__empty {
+  padding: 16px 20px;
+  color: var(--text-muted);
+  background: var(--surface);
+}
+
+.contact-support {
+  margin: auto 0 auto auto;
+}
+
+.loading,
+.error {
+  padding: 48px 20px 0;
+  color: var(--text-muted);
+}
+
+.error {
+  color: #ff9b9b;
+}
