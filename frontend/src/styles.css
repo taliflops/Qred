@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root { font-family: 'DM Sans', sans-serif; color: #20272a; background: #102c2f; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; color: inherit; cursor: pointer; border: 0; }
+.shell { width: min(100%, 480px); min-height: 100vh; margin: 0 auto; padding: 30px 28px 38px; background: #fafbf9; position: relative; overflow: hidden; }
+.topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 42px; }
+.logo { width: 75px; height: 35px; object-fit: contain; object-position: left center; }
+.menu-button { background: #eef0ef; padding: 12px 14px; font-weight: 700; display: flex; gap: 12px; align-items: center; }
+.menu-lines { font-size: 18px; line-height: 1; }
+.menu-panel { position: absolute; z-index: 2; top: 78px; right: 28px; width: 170px; padding: 8px; background: white; box-shadow: 0 10px 30px #102c2f20; border: 1px solid #dce1df; }
+.menu-panel button, .company-options button { background: transparent; display: block; width: 100%; text-align: left; padding: 12px; }
+.company-picker { margin-bottom: 44px; position: relative; }
+.company-picker > button { width: 100%; padding: 18px 22px; background: #eef0ef; display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 500; }
+.chevron { font-size: 28px; line-height: 12px; }
+.company-options { position: absolute; z-index: 1; left: 0; right: 0; background: white; border: 1px solid #dce1df; box-shadow: 0 8px 20px #102c2f18; }
+.status-card { min-height: 290px; border-radius: 26px; background: #e8eae9; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 54px; margin-bottom: 42px; }
+.status-label { background: #fafbf9; box-shadow: 0 3px 3px #20272a22; padding: 16px 24px; font-weight: 700; font-size: 17px; margin-top: -82px; }
+.status-label span, .card-link span, .spend-value span, .all-transactions span { font-size: 32px; line-height: 0; margin-left: 34px; vertical-align: -3px; }
+.card-link { background: transparent; font-size: 17px; }
+section h2 { font-size: 16px; margin: 0; }
+.spend-panel { background: #eef0ef; padding: 20px 22px 26px; margin-bottom: 28px; }
+.spend-value { background: transparent; display: block; width: 100%; text-align: center; margin: 72px 0 70px; font-size: 20px; }
+.spend-value span { float: right; }
+.spend-panel p { text-align: right; margin: 0; font-size: 15px; }
+.transactions { background: #eef0ef; margin-bottom: 40px; }
+.transactions h2 { padding: 20px 22px; }
+.transaction-list { background: #dde0df; padding: 10px 22px; }
+.transaction { display: flex; justify-content: space-between; padding: 13px 0; font-size: 16px; }
+.all-transactions { width: 100%; background: #fafbf9; border: 2px solid #20272a; padding: 14px 18px; text-align: left; font-weight: 700; }
+.all-transactions span { float: right; }
+.actions { display: grid; gap: 14px; }
+.actions button { background: #20272a; color: white; padding: 15px; font-size: 17px; }
+.actions button:disabled { background: #597075; }
+.toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: #102c2f; color: white; padding: 12px 16px; box-shadow: 0 4px 16px #102c2f44; white-space: nowrap; }
+.toast button { background: transparent; color: white; margin-left: 12px; font-size: 20px; }
+.loading { display: grid; place-items: center; font-size: 18px; }
+@media (min-width: 700px) { .shell { margin: 28px auto; min-height: auto; border-radius: 22px; box-shadow: 0 20px 60px #0003; } }
